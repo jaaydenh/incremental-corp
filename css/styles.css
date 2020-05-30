@@ -1,0 +1,11 @@
+body {
+    font-family: sans-serif;
+  }
+
+canvas {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000000;
+  background: #ececec;
+}
+  
