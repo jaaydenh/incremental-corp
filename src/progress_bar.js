@@ -41,7 +41,7 @@ export default class ProgressBar extends UIObject {
         if (this._isAnimating) {
             this._barWidth += this._speed;
 
-            if (this._barWidth - this._speed * 2 > this._width) {
+            if (this._barWidth > this._width) {
                 this.reset(ctx);
                 this._barWidth = 0;
                 this._isAnimating = false;
@@ -60,7 +60,7 @@ export default class ProgressBar extends UIObject {
     reset (ctx) {
         // draw background
         ctx.fillStyle = '#BDBDBD';
-        ctx.fillRect(this._x, this._y, this._width + this._speed * 2, this._height);
+        ctx.fillRect(this._x, this._y, this._width, this._height);
         this.drawIncomeText(ctx);
     }
 

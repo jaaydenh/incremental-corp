@@ -1,4 +1,5 @@
 import Button from './button.js';
+import Util from './util.js';
 
 export default class BuyButton extends Button {
     constructor (x, y, width, height, cost) {
@@ -38,6 +39,6 @@ export default class BuyButton extends Button {
         var textY = this._y + (this._height / 2) - (fontSize / 2);
 
         // draw the text
-        ctx.fillText(this._text + ' $' + this._cost, textX, textY);
+        ctx.fillText(this._text + ' $' + Util.formatMoney(this._cost, 2), textX, textY);
     }
 }

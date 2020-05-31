@@ -9,6 +9,9 @@ export default class GameEngine {
 
     setupCanvas () {
         this.context2D.textBaseline = 'top';
+        this.context2D.fillStyle = 'black';
+        this.context2D.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
         this.context2D.mouse = {
             x: 0,
             y: 0,

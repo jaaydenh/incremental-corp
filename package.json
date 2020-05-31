@@ -1,22 +1,19 @@
 {
   "name": "incremental-corp",
   "version": "1.0.0",
-  "description": "Idle game based on adventure capitalist and built using canvas",
+  "description": "Incremental game based on adventure capitalist and built using canvas",
+  "private": true,
   "main": "index.js",
   "dependencies": {
-    "eslint-config-standard": "^14.1.1",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "eslint": "^6.8.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "underscore": "^1.10.2"
+    "eslint": "^6.8.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -27,5 +24,6 @@
   "bugs": {
     "url": "https://github.com/jaaydenh/incremental-corp/issues"
   },
-  "homepage": "https://github.com/jaaydenh/incremental-corp#readme"
+  "homepage": "https://github.com/jaaydenh/incremental-corp#readme",
+  "keywords": []
 }

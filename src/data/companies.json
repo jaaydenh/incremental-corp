@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Biz 1",
+        "starting_cost": 1,
+        "cost_multiplier": 1.2,
+        "starting_income": 1,
+        "income_increment": 1,
+        "speed": 6,
+        "manager_cost": 1000,
+        "enabled": true,
+        "description": "",
+        "y_offset": 0
+    },
+    {
+        "name": "Biz 2",
+        "starting_cost": 60,
+        "cost_multiplier": 1.2,
+        "starting_income": 60,
+        "income_increment": 60,
+        "speed": 1.3,
+        "manager_cost": 15000,
+        "enabled": false,
+        "description": "",
+        "y_offset": 120
+    },
+    {
+        "name": "Biz 3",
+        "starting_cost": 720,
+        "cost_multiplier": 1.2,
+        "starting_income": 540,
+        "income_increment": 540,
+        "speed": 0.6,
+        "manager_cost": 100000,
+        "enabled": false,
+        "description": "",
+        "y_offset": 240
+    },
+    {
+        "name": "Biz 4",
+        "starting_cost": 8640,
+        "cost_multiplier": 1.2,
+        "starting_income": 4320,
+        "income_increment": 4320,
+        "speed": 0.3,
+        "manager_cost": 500000,
+        "enabled": false,
+        "description": "",
+        "y_offset": 360
+    }
+]

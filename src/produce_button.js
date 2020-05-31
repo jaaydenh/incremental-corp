@@ -1,7 +1,7 @@
 import Button from './button.js';
 
 export default class ProduceButton extends Button {
-    constructor (text, x, y, width, height) {
+    constructor (x, y, width, height, text) {
         super(x, y, width, height);
 
         this._text = text;

@@ -1,4 +1,5 @@
 import UIObject from './uiobject.js';
+import Util from './util.js';
 
 export default class Counter extends UIObject {
     constructor (x, y, width, height, fontSize, value) {
@@ -13,7 +14,7 @@ export default class Counter extends UIObject {
     }
 
     set value (newValue) {
-        this._value = Math.round((newValue + Number.EPSILON) * 100) / 100;
+        this._value = newValue;
     }
 
     get value () {
@@ -36,6 +37,6 @@ export default class Counter extends UIObject {
         // var textX = this.x + (this.width/2) - (textSize.width / 2);
         // var textY = this.y + (this.height/2) - (this.fontSize/2);
 
-        ctx.fillText('$ ' + this._value, this._x, this._y);
+        ctx.fillText('$ ' + Util.formatMoney(this._value, 2), this._x, this._y);
     }
 }
