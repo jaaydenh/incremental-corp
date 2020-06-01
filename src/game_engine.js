@@ -3,13 +3,13 @@ export default class GameEngine {
         this.canvas = canvas;
         this.context2D = canvas.getContext('2d');
         this.gameObjects = [];
-        this.setupCanvas();
+        this.setupCanvas(this.context2D);
         this.requestId = null;
     }
 
-    setupCanvas () {
+    setupCanvas (ctx) {
         this.context2D.textBaseline = 'top';
-        this.context2D.fillStyle = 'black';
+        this.context2D.fillStyle = '#787878';
         this.context2D.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.context2D.mouse = {

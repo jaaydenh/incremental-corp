@@ -26,17 +26,27 @@ export default class Counter extends UIObject {
     }
 
     draw (ctx) {
-        ctx.clearRect(this._x, this._y, this._width, this._height);
+        var imageObj2 = new Image();
+        imageObj2.xPos = this._x;
+        imageObj2.yPos = this._y;
+        imageObj2.width = this._width;
+        imageObj2.height = this._height;
+        imageObj2.onload = function() {
+            ctx.drawImage(imageObj2, this.xPos + 25, this.yPos -2, this.width, this.height);
+        };
+        imageObj2.src = './img/UI_Frame_Transparent.png';
 
-        // text options
-        ctx.fillStyle = 'rgba(0,0,0,1.0)';
-        ctx.font = this._fontSize + 'px sans-se    rif';
+        var imageObj = new Image();
+        imageObj.xPos = this._x;
+        imageObj.yPos = this._y;
+        imageObj.onload = function() {
+            ctx.drawImage(imageObj, this.xPos + 10, this.yPos - 6, 48, 48);
+        };
+        imageObj.src = './img/Coins.png';
 
-        // text position
-        // var textSize = ctx.measureText(this._value);
-        // var textX = this.x + (this.width/2) - (textSize.width / 2);
-        // var textY = this.y + (this.height/2) - (this.fontSize/2);
+        ctx.fillStyle = '#ededed';
+        ctx.font = this._fontSize + 'px sans-se';
 
-        ctx.fillText('$ ' + Util.formatMoney(this._value, 2), this._x, this._y);
+        ctx.fillText('$ ' + Util.formatMoney(this._value, 2), this._x + 60, this._y + 1);
     }
 }

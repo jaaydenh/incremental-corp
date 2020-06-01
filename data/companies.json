@@ -1,6 +1,6 @@
 [
     {
-        "name": "Biz 1",
+        "name": "Wood",
         "starting_cost": 1,
         "cost_multiplier": 1.2,
         "starting_income": 1,
@@ -9,10 +9,11 @@
         "manager_cost": 1000,
         "enabled": true,
         "description": "",
-        "y_offset": 0
+        "y_offset": 0,
+        "img_name": "Wood"
     },
     {
-        "name": "Biz 2",
+        "name": "Food",
         "starting_cost": 60,
         "cost_multiplier": 1.2,
         "starting_income": 60,
@@ -21,10 +22,11 @@
         "manager_cost": 15000,
         "enabled": false,
         "description": "",
-        "y_offset": 120
+        "y_offset": 120,
+        "img_name": "Food"
     },
     {
-        "name": "Biz 3",
+        "name": "Iron",
         "starting_cost": 720,
         "cost_multiplier": 1.2,
         "starting_income": 540,
@@ -33,10 +35,11 @@
         "manager_cost": 100000,
         "enabled": false,
         "description": "",
-        "y_offset": 240
+        "y_offset": 240,
+        "img_name": "Iron"
     },
     {
-        "name": "Biz 4",
+        "name": "Gems",
         "starting_cost": 8640,
         "cost_multiplier": 1.2,
         "starting_income": 4320,
@@ -45,6 +48,7 @@
         "manager_cost": 500000,
         "enabled": false,
         "description": "",
-        "y_offset": 360
+        "y_offset": 360,
+        "img_name": "Gems"
     }
 ]

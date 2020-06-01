@@ -33,7 +33,7 @@ export default class ProgressBar extends UIObject {
     }
 
     drawBar (ctx) {
-        ctx.fillStyle = '#07fc03';
+        ctx.fillStyle = '#7FE918';
         ctx.fillRect(this._x, this._y, this._barWidth, this._height);
     }
 

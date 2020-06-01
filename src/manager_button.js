@@ -26,19 +26,18 @@ export default class ManagerButton extends Button {
 
     draw (ctx) {
         if (this._enabled) {
-            // set button color
             if (this._hovered) {
                 ctx.fillStyle = 'rgba(200,255,200,1.0)';
             } else {
-                ctx.fillStyle = '#FFAD44';
+                ctx.fillStyle = '#7FE918';
             }
 
-            // draw button
             ctx.fillRect(this._x, this._y, this._width, this._height);
+
 
             // text options
             var fontSize = 20;
-            ctx.fillStyle = '#000000';
+            ctx.fillStyle = '#242424';
             ctx.font = fontSize + 'px sans-se    rif';
 
             // text position
@@ -56,7 +55,7 @@ export default class ManagerButton extends Button {
     }
 
     clear (ctx) {
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = '#787878';
         ctx.fillRect(this._x, this._y, this._width, this._height);
     }
 }

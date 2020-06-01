@@ -10,7 +10,7 @@ export default class BuyButton extends Button {
     }
 
     set cost (newCost) {
-        this._cost = Math.round((newCost + Number.EPSILON) * 100) / 100;
+        this._cost = newCost;
     }
 
     get cost () {
@@ -25,16 +25,23 @@ export default class BuyButton extends Button {
             ctx.fillStyle = '#FFAD44';
         }
 
-        // draw button
-        ctx.fillRect(this._x, this._y, this._width, this._height);
-
+        var imageObj = new Image();
+        imageObj.xPos = this._x;
+        imageObj.yPos = this._y;
+        imageObj.width = this._width;
+        imageObj.height = this._height;
+        imageObj.onload = function() {
+            ctx.drawImage(imageObj, this.xPos, this.yPos, this.width, this.height);
+        };
+        imageObj.src = './img/UI_Fill_Orange.png';
+        
         // text options
         var fontSize = 20;
-        ctx.fillStyle = '#000000';
-        ctx.font = fontSize + 'px sans-se    rif';
+        ctx.fillStyle = '#242424';
+        ctx.font = fontSize + 'px sans-se';
 
         // text position
-        var textSize = ctx.measureText(this._text + ' : ' + this._cost);
+        var textSize = ctx.measureText(this._text + ' $' + Util.formatMoney(this._cost, 2));
         var textX = this._x + (this._width / 2) - (textSize.width / 2);
         var textY = this._y + (this._height / 2) - (fontSize / 2);
 

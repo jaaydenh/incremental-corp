@@ -1,11 +1,25 @@
-import Counter from './counter.js';
-
 export default class Player {
-    constructor (money, engine) {
-        this._money = money;
+    constructor (moneyCounter) {
+        this._moneyCounter = moneyCounter;
+    }
 
-        this._moneyCounter = new Counter(20, 10, 400, 30, 30, 0);
-        engine.gameObjects.push(this._moneyCounter);
+    initPlayer () {
+        this._money = 0;
+        this._last_login = Math.floor(Date.now() / 1000);
+        this._companies = [];
+        this._companies.push({name: 'Wood', enabled: true, managerHired: false, currentIncome: 0, currentCost: 0});
+        this._companies.push({name: 'Food', enabled: false, managerHired: false, currentIncome: 0, currentCost: 0});
+        this._companies.push({name: 'Iron', enabled: false, managerHired: false, currentIncome: 0, currentCost: 0});
+        this._companies.push({name: 'Gems', enabled: false, managerHired: false, currentIncome: 0, currentCost: 0});
+    }
+
+    loadPlayerFromData (playerData) {
+        this._money = playerData._money;
+        this._last_login = playerData._last_login;
+        this._companies = [];
+        playerData._companies.forEach(companyData => {
+            this._companies.push(companyData);
+        });
     }
 
     set money (newMoney) {
@@ -14,6 +28,58 @@ export default class Player {
 
     get money () {
         return this._money;
+    }
+
+    set last_login (newLogin) {
+        this._last_login = newLogin;
+    }
+
+    get last_login () {
+        return this._last_login;
+    }
+
+    openCompany (companyName) {
+        let company = this.getCompanyData(companyName);
+        company.enabled = true;
+    }
+
+    hireManager (companyName) {
+        let company = this.getCompanyData(companyName);
+        company.managerHired = true;
+    }
+
+    setCompanyCurrentIncome (companyName, income) {
+        let company = this.getCompanyData(companyName);
+        company.currentIncome = income;
+    }
+
+    getCompanyCurrentIncome (companyName) {
+        let company = this.getCompanyData(companyName);
+        return company.currentIncome;
+    }
+
+    setCompanyCurrentCost (companyName, cost) {
+        let company = this.getCompanyData(companyName);
+        company.currentCost = cost;
+    }
+
+    getCompanyCurrentCost (companyName) {
+        let company = this.getCompanyData(companyName);
+        return company.currentCost;
+    }
+
+    getCompanyData (companyName) {
+        return this._companies.find( ({ name }) => name === companyName );
+    }
+
+    isCompanyEnabled (companyName) {
+        let company = this.getCompanyData(companyName);
+        return company.enabled;
+    }
+
+    isManagerHired (companyName) {
+        let company = this.getCompanyData(companyName);
+        return company.managerHired;
     }
 
     update (ctx) {

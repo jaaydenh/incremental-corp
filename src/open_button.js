@@ -5,7 +5,7 @@ export default class OpenButton extends Button {
     constructor (x, y, width, height, name, cost, enabled) {
         super(x, y, width, height);
 
-        this._text = 'Open ' + name;
+        this._text = 'Unlock ' + name;
         this._cost = cost;
         this._enabled = enabled;
     }
@@ -26,7 +26,7 @@ export default class OpenButton extends Button {
             if (this._hovered) {
                 ctx.fillStyle = 'rgba(200,255,200,1.0)';
             } else {
-                ctx.fillStyle = '#FFAD44';
+                ctx.fillStyle = '#77B4CD';
             }
 
             // draw button
@@ -34,8 +34,8 @@ export default class OpenButton extends Button {
 
             // text options
             var fontSize = 20;
-            ctx.fillStyle = '#000000';
-            ctx.font = fontSize + 'px sans-se    rif';
+            ctx.fillStyle = '#242424';
+            ctx.font = fontSize + 'px sans-se';
 
             // text position
             var textSize = ctx.measureText(this._text + ' : ' + this._cost);
@@ -45,5 +45,10 @@ export default class OpenButton extends Button {
             // draw the text
             ctx.fillText(this._text + ' $' + Util.formatMoney(this._cost, 0), textX, textY);
         }
+    }
+
+    clear (ctx) {
+        ctx.fillStyle = '#787878';
+        ctx.fillRect(this._x, this._y, this._width, this._height);
     }
 }
