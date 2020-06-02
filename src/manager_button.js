@@ -34,18 +34,15 @@ export default class ManagerButton extends Button {
 
             ctx.fillRect(this._x, this._y, this._width, this._height);
 
-
             // text options
             var fontSize = 20;
             ctx.fillStyle = '#242424';
-            ctx.font = fontSize + 'px sans-se    rif';
+            ctx.font = fontSize + 'px Arial';
 
             // text position
             var textSize = ctx.measureText(this._text);
             var textX = this._x + (this._width / 2) - (textSize.width / 2);
-            // var textY = this._y + (this._height / 2) - (fontSize / 2);
 
-            // draw the text
             ctx.fillText(this._text, textX, this._y + 17);
 
             var textSize1 = ctx.measureText(this._cost);

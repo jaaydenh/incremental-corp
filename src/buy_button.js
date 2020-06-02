@@ -7,6 +7,16 @@ export default class BuyButton extends Button {
 
         this._text = 'Buy';
         this._cost = cost;
+
+        this._btnImage = new Image();
+        this._btnImage.xPos = this._x;
+        this._btnImage.yPos = this._y;
+        this._btnImage.width = this._width;
+        this._btnImage.height = this._height;
+        this._btnImage.onload = function() {
+            this.loaded = true;
+        };
+        this._btnImage.src = './img/UI_Fill_Orange.png';
     }
 
     set cost (newCost) {
@@ -20,25 +30,22 @@ export default class BuyButton extends Button {
     draw (ctx) {
         // set button color
         if (this._hovered) {
+            // TODO: add hover effect alt image for button
             ctx.fillStyle = 'rgba(200,255,200,1.0)';
-        } else {
-            ctx.fillStyle = '#FFAD44';
         }
 
-        var imageObj = new Image();
-        imageObj.xPos = this._x;
-        imageObj.yPos = this._y;
-        imageObj.width = this._width;
-        imageObj.height = this._height;
-        imageObj.onload = function() {
-            ctx.drawImage(imageObj, this.xPos, this.yPos, this.width, this.height);
-        };
-        imageObj.src = './img/UI_Fill_Orange.png';
+        if (this._btnImage.loaded) {
+            ctx.drawImage(this._btnImage, this._btnImage.xPos, this._btnImage.yPos, this._btnImage.width, this._btnImage.height);
+        }
+
+        if (this._hovered) {
+            ctx.fillStyle = '#ffffff';
+        } else {
+            ctx.fillStyle = '#242424';
+        }
         
-        // text options
         var fontSize = 20;
-        ctx.fillStyle = '#242424';
-        ctx.font = fontSize + 'px sans-se';
+        ctx.font = fontSize + 'px Arial';
 
         // text position
         var textSize = ctx.measureText(this._text + ' $' + Util.formatMoney(this._cost, 2));

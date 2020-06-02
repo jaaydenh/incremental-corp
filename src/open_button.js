@@ -29,20 +29,18 @@ export default class OpenButton extends Button {
                 ctx.fillStyle = '#77B4CD';
             }
 
-            // draw button
             ctx.fillRect(this._x, this._y, this._width, this._height);
 
             // text options
             var fontSize = 20;
             ctx.fillStyle = '#242424';
-            ctx.font = fontSize + 'px sans-se';
+            ctx.font = fontSize + 'px Arial';
 
             // text position
             var textSize = ctx.measureText(this._text + ' : ' + this._cost);
             var textX = this._x + (this._width / 2) - (textSize.width / 2);
             var textY = this._y + (this._height / 2) - (fontSize / 2);
 
-            // draw the text
             ctx.fillText(this._text + ' $' + Util.formatMoney(this._cost, 0), textX, textY);
         }
     }

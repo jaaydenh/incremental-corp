@@ -6,6 +6,9 @@ export default class Player {
     initPlayer () {
         this._money = 0;
         this._last_login = Math.floor(Date.now() / 1000);
+
+        // initialize company defaults
+        // Todo: this should be in sync with companies.json data
         this._companies = [];
         this._companies.push({name: 'Wood', enabled: true, managerHired: false, currentIncome: 0, currentCost: 0});
         this._companies.push({name: 'Food', enabled: false, managerHired: false, currentIncome: 0, currentCost: 0});

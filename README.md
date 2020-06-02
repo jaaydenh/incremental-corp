@@ -23,7 +23,7 @@ Trade-offs:
 
 Although my current skill set is stronger on the back-end, it seemed more feasible to build a solution that more completely implemented the core features by focusing on the front-end first. Here are a list of items that were left out and would be worked on next with additional time.
 
-- Pre-loading assets: espcially as the project grows, it would be better to pre-load assets such as images on a loading screen. Ideally, calling new Image should not be in th game loop.
+- Pre-loading assets: espcially as the project grows, it would be better to pre-load assets such as images on a loading screen.
 - Cleaner separation between model and view: this project was built organically as an exploration of html5 canvas. A refactoring pass should be done to better separate game logic from drawing to the screen. This would also improve testability with the jasmine unit tests.
 - Idle progress - this is the last major feature that was not completed in the initial version. With saving/restoring game state to local storagee  already implemented, this would take minimal effort to complete.
 

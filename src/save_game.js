@@ -21,6 +21,7 @@ export default class SaveGame {
             } else {
                 let player = new Player(moneyCounter);
                 player.loadPlayerFromData(JSON.parse(storedPlayer));
+                //TODO: add versioning to player data and handle version updates when loading
                 return player;
             }
         } catch (err) {
