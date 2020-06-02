@@ -2,7 +2,11 @@
 
 Incremental game based on adventure capitalist and built using html5 canvas.
 
-## description
+## Play
+
+https://jaaydenh.itch.io/incremental-corp
+
+## Description
 
 The goal of this project is to build the basic features of an incremental game entirely within the html5 canvas. The constraint is to use vanilla javascript instead of an already built game engine.
 

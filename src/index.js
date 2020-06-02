@@ -6,7 +6,7 @@ import Counter from './counter.js';
 document.body.style.backgroundColor = 'white';
 
 var canvas = document.getElementById('gameCanvas');
-canvas.width = 620;
+canvas.width = 640;
 canvas.height = 800;
 
 var engine = new GameEngine(canvas);
